@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniDice | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="page-header wrapper">
+    <img class="logo" src="Images/Omnidice-logo.png" alt="OmniDice logo">
+    <p class="subtitle">Site Plan by Jacen Haws for WDD 130.</p>
+  </header>
+
+  <nav class="wrapper" aria-label="Main navigation">
+    <p class="nav-label">Navigation</p>
+    <div class="nav-bar">
+      <a class="active" href="index.html">Home</a>
+      <a href="#">Custom Builder</a>
+      <a href="#">Gallery</a>
+    </div>
+  </nav>
+
+  <main class="wrapper">
+    <section class="tray-stack" aria-label="Home page rolling tray">
+      <div class="tray-panel">
+        <div class="selector-card">
+          <h2>Dice Selection</h2>
+          <div class="selector-controls">
+            <label class="sr-only" for="dieType">Die Type</label>
+            <select id="dieType" aria-label="Die type">
+              <option value="4">d4</option>
+              <option value="6" selected>d6</option>
+              <option value="8">d8</option>
+              <option value="10">d10</option>
+              <option value="12">d12</option>
+              <option value="20">d20</option>
+              <option value="100">d100</option>
+            </select>
+
+            <label class="sr-only" for="quantity">Quantity</label>
+            <select id="quantity" aria-label="Quantity">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+
+            <button id="addDie" type="button" class="add-btn">Add Dice</button>
+          </div>
+        </div>
+
+        <div class="tray-card">
+          <div class="tray-title-row">
+            <span>Dice Tray</span>
+            <span>Grid</span>
+          </div>
+
+          <div id="diceTray" class="dice-grid" aria-live="polite"></div>
+        </div>
+
+        <div class="action-row">
+          <button id="rollAll" type="button" class="roll-btn">Roll</button>
+          <output id="sumTotal" class="sum-panel" aria-live="polite">Sum Total: 0</output>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
