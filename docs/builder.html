@@ -3,7 +3,7 @@ Team Name: Team Haws
 Contributors: Cam Smith
 Date: 2026
 Source:
-[0] Instructions, [1] Course, [2] Github, [4] wwr
+[0] Instructions, [1] Course, [2] Github, [4] wwr, [5] Google
 -->
 
 <!DOCTYPE html>
@@ -12,18 +12,22 @@ Source:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Die Builder</title>
+    <link rel="stylesheet" href="styles/builder_styles.css">
 </head>
-<body>
+
+
+
+<body id="content">
     <header>
-    <nav class="">
-        <a href="homepage_index.html">Home</a>
-        <a href="builder.html">Custom Builder</a>
-        <a href="#">Gallery</a>
-    </nav>
-        <h1>Welcome to the Forge! In here, you are the Forgemaster! Build whatever die your campaign is need of</h1>
+        <nav class="nav-bar">
+            <a class="home-link" href="homepage_index.html">Home</a>
+            <a class="builder-link" href="builder.html">Custom Builder</a>
+            <a class="gallery-link" href="#">Gallery</a>
+        </nav>
+        <h1>Welcome to the Forge! In here, you are the Forgemaster! Build whatever die your campaign is in need of.</h1>
     </header>
 
-    <main>
+    <main id="die-box">
         <h2>Die Preview Area</h2>
         <img id="die-preview" src="images/Die-Preview.png" alt="Die ready to be forged">
         <div class="button-box">
@@ -31,7 +35,7 @@ Source:
         </div>
     </main>
 
-    <section>
+    <section id="side-inputs">
         <label for="die-name">Die Name</label>
         <input type="die-name" id="die-name" name="die-name" required>
         
@@ -42,19 +46,19 @@ Source:
 
         <label for="side1">Side 1</label>
         <input type="side1" id="side1" name="side1" required>
-        <div class="upload-button-box">
+        <div class="upload-btn-box">
             <a class="upload" href="#">UPLOAD IMAGE</a>
         </div>
 
         <label for="side2">Side 2</label>
         <input type="side2" id="side2" name="side2" required>
-        <div class="upload-button-box">
+        <div class="upload-btn-box">
             <a class="upload" href="#">UPLOAD IMAGE</a>
         </div>
 
         <label for="side3">Side 3</label>
         <input type="side3" id="side3" name="side3" required>
-        <div class="upload-button-box">
+        <div class="upload-btn-box">
             <a class="upload" href="#">UPLOAD IMAGE</a>
         </div>
     </section>
