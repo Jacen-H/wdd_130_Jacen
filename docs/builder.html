@@ -11,60 +11,58 @@ Source:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Die Builder</title>
+    <title>OmniDice | The Forge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/builder_styles.css">
 </head>
 
-
-
-<body id="content">
-    <header>
-        <nav class="nav-bar">
-            <a class="home-link" href="homepage_index.html">Home</a>
-            <a class="builder-link" href="builder.html">Custom Builder</a>
-            <a class="gallery-link" href="#">Gallery</a>
-        </nav>
-        <h1>Welcome to the Forge! In here, you are the Forgemaster! Build whatever die your campaign is in need of.</h1>
+<body>
+    <header class="page-header wrapper">
+        <img class="logo" src="images/Omnidice-logo.png" alt="OmniDice logo">
+        <p class="subtitle">Site Plan by Jacen Haws for WDD 130.</p>
     </header>
 
-    <main id="die-box">
-        <h2>Die Preview Area</h2>
-        <img id="die-preview" src="images/Die-Preview.png" alt="Die ready to be forged">
-        <div class="button-box">
-            <a class="save" href="#">Save Die</a>
+    <nav class="wrapper" aria-label="Main navigation">
+        <p class="nav-label">Navigation</p>
+        <div class="nav-bar">
+            <a href="homepage_index.html">Home</a>
+            <a class="active" href="builder.html">Custom Builder</a>
+            <a href="#">Gallery</a>
         </div>
+    </nav>
+
+    <main class="wrapper forge-layout" aria-label="Custom builder page">
+        <section class="config-panel" aria-label="Configuration sidebar">
+            <label for="die-name">Die Name</label>
+            <input type="text" id="die-name" name="die-name" placeholder="Ex: Chaos Die" required>
+
+            <label for="num-sides">Number of Sides</label>
+            <input type="number" id="num-sides" name="num-sides" min="2" placeholder="Ex: 6" required>
+
+            <p class="section-title">Side Inputs</p>
+
+            <label for="side1">Side 1</label>
+            <input type="text" id="side1" name="side1" required>
+            <button class="upload" type="button">Upload Image</button>
+
+            <label for="side2">Side 2</label>
+            <input type="text" id="side2" name="side2" required>
+            <button class="upload" type="button">Upload Image</button>
+
+            <label for="side3">Side 3</label>
+            <input type="text" id="side3" name="side3" required>
+            <button class="upload" type="button">Upload Image</button>
+        </section>
+
+        <section class="preview-panel" aria-label="Dice preview area">
+            <h1>Dice Preview Area</h1>
+            <div class="preview-frame">
+                <img id="die-preview" src="images/Die-Preview.png" alt="Die ready to be forged">
+            </div>
+            <button class="save" type="button">Save Die</button>
+        </section>
     </main>
-
-    <section id="side-inputs">
-        <label for="die-name">Die Name</label>
-        <input type="die-name" id="die-name" name="die-name" required>
-        
-        <label for="num-sides">Number of Sides</label>
-        <input type="num-sides" id="num-sides" name="num-sides" required>
-        
-        <p>SIDE INPUTS</p>
-
-        <label for="side1">Side 1</label>
-        <input type="side1" id="side1" name="side1" required>
-        <div class="upload-btn-box">
-            <a class="upload" href="#">UPLOAD IMAGE</a>
-        </div>
-
-        <label for="side2">Side 2</label>
-        <input type="side2" id="side2" name="side2" required>
-        <div class="upload-btn-box">
-            <a class="upload" href="#">UPLOAD IMAGE</a>
-        </div>
-
-        <label for="side3">Side 3</label>
-        <input type="side3" id="side3" name="side3" required>
-        <div class="upload-btn-box">
-            <a class="upload" href="#">UPLOAD IMAGE</a>
-        </div>
-    </section>
-    
-    <footer>
-
-    </footer>
 </body>
 </html>

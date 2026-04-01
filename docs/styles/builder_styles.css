@@ -1,190 +1,199 @@
-/*
-Team Name: Team Haws
-Contributors: Cam Smith
-Date: 2026
-Source:
-[0] Instructions, [1] Course, [2] Github, [4] wwr, [5] Google
-*/
-
-/* Colors:
-Primary: #0D1117
-Secondary: #40E0D0
-Accent 1: #1E90FF
-Accent 2: #8A2BE2
-*/
-
-#content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    background-color: #0D1117;
-    font-family: "Rajdhani", sans-serif;
-    border: 10px solid #0D1117;
+:root {
+    --bg-paper: #eaf2f7;
+    --ink: #1e2835;
+    --panel: #dce7ef;
+    --panel-border: #263142;
+    --accent-blue: #2f8fe6;
+    --accent-teal: #40e0d0;
+    --accent-purple: #8a2be2;
 }
 
-header {
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--ink);
+    font-family: "Rajdhani", sans-serif;
+    background-color: var(--bg-paper);
+    background-image:
+        linear-gradient(rgba(56, 81, 102, 0.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 81, 102, 0.09) 1px, transparent 1px);
+    background-size: 22px 22px;
+}
+
+.wrapper {
+    width: min(980px, 92%);
+    margin: 0 auto;
+}
+
+.page-header {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    width: min(320px, 76vw);
+    height: auto;
+    margin: 0 auto;
+}
+
+.subtitle {
+    margin: 0.25rem 0 0;
+    font-size: clamp(1.1rem, 2.3vw, 2rem);
+}
+
+.nav-label {
+    margin: 0.8rem 0 0.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.03em;
 }
 
 .nav-bar {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    color: #0D1117;
-    background-color: #8A2BE2;
-    text-align: center;
-    height: 50px;
-    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    border: 2px solid var(--panel-border);
+    border-radius: 4px;
+    background: linear-gradient(180deg, #ebf2f7, #d6e2ec);
+    overflow: hidden;
 }
 
-.home-link, .builder-link, .gallery-link {
-    color: #0D1117;
+.nav-bar a {
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-h1 {
-    color: #1E90FF;
+    color: var(--ink);
     text-align: center;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    font-weight: 500;
+    padding: 0.4rem 0.3rem;
 }
 
-#die-box {
-    grid-column: 2 / 3;
-    grid-row: 2 / 7;
-    text-align: right;
-    margin-right: 200px;
-    margin-top: 80px;
+.nav-bar a.active,
+.nav-bar a:hover,
+.nav-bar a:focus-visible {
+    background: rgba(64, 224, 208, 0.26);
+    outline: none;
 }
 
-h2 {
-    color: #1E90FF;
-    text-align: center;
-    font-size: 2rem;
-    margin-right: 20px;
+.forge-layout {
+    margin: 2rem auto 3rem;
+    border: 2px solid var(--panel-border);
+    border-radius: 4px;
+    background: var(--panel);
+    padding: 0.8rem;
+    display: grid;
+    gap: 0.8rem;
+    grid-template-columns: 1fr 1.3fr;
 }
 
-#die-preview {
-    height: 550px;
-    width: 650px;
-    margin-right: 50px;
-    
+.config-panel,
+.preview-panel {
+    border: 2px solid var(--panel-border);
+    border-radius: 4px;
+    background: linear-gradient(180deg, #edf4f8, #dde8ef);
+    padding: 0.7rem;
 }
 
-.button-box {
-    align-content: center;
-    display: inline-block;
-    padding: 10px 150px;
-    font-size: 1.2rem;
-    color: #0D1117;
-    background-color: #1E90FF;
-    border: 2px solid black;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-right: 180px;
+.config-panel {
+    display: grid;
+    gap: 0.35rem;
+    align-content: start;
 }
 
-.save {
-    text-decoration: none;
-    color: #0D1117;
+.config-panel label,
+.section-title {
+    margin: 0;
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.95rem;
 }
 
-#side-inputs {
-    text-align: left;
-    grid-column: 1 / 2;
-    grid-row: 3 / 9;
-    margin-left: 20px;
-} 
-
-label {
-    color: #1E90FF;
-    font-size: 1.2rem;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.section-title {
+    margin-top: 0.35rem;
 }
 
-#die-name {
-    grid-row: 1 / 2;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 1.2rem;
-    width: 200px;
-    border: 2px solid #0D1117;
-    border-radius: 5px;
-}
-
-#num-sides {
-    grid-row: 3 / 4;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 1.2rem;
-    width: 200px;
-    border: 2px solid #0D1117;
-    border-radius: 5px;
-}
-
-p {
-    color: #1E90FF;
-    font-size: 1.2rem;
-    margin-top: 20px;
-    margin-bottom: 2px;
-}
-
-#side1 {
-    grid-row: 5 / 6;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 1.2rem;
-    width: 200px;
-    border: 2px solid #0D1117;
-    border-radius: 5px;
-}
-
-#side2 {
-    grid-row: 7 / 8;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 1.2rem;
-    width: 200px;
-    border: 2px solid #0D1117;
-    border-radius: 5px;
-}
-
-#side3 {
-    grid-row: 9 / 10;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 1.2rem;
-    width: 200px;
-    border: 2px solid #0D1117;
-    border-radius: 5px;
-}
-
-#upload-btn-box {
-    text-align: center;
-    margin-top: 10px;
+.config-panel input {
+    width: 100%;
+    border: 2px solid var(--panel-border);
+    border-radius: 4px;
+    min-height: 2rem;
+    padding: 0 0.5rem;
+    font: inherit;
+    font-size: 1.05rem;
+    background: #eff5f9;
 }
 
 .upload {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    color: #0D1117;
-    background-color: #8A2BE2;
-    border: 2px solid black;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 10px;
+    border: 2px solid #38106a;
+    border-radius: 4px;
+    min-height: 2.05rem;
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    color: #f5eefe;
+    background: linear-gradient(90deg, #6625b6, var(--accent-purple));
+    cursor: pointer;
+}
+
+.preview-panel {
+    display: grid;
+    align-content: start;
+    justify-items: center;
+    gap: 0.7rem;
+}
+
+.preview-panel h1 {
+    margin: 0;
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
+    font-size: clamp(1rem, 1.8vw, 1.35rem);
+}
+
+.preview-frame {
+    width: 100%;
+    border: 2px solid var(--panel-border);
+    border-radius: 4px;
+    background: #edf3f8;
+    min-height: 420px;
+    display: grid;
+    place-items: center;
+    padding: 0.7rem;
+}
+
+#die-preview {
+    width: min(100%, 340px);
+    height: auto;
+    display: block;
+}
+
+.save {
+    width: min(240px, 100%);
+    border: 2px solid #0f2a4a;
+    border-radius: 4px;
+    min-height: 3rem;
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: #041931;
+    background: linear-gradient(90deg, #2f8fe6, #4fb6ff);
+    cursor: pointer;
+}
+
+@media (max-width: 760px) {
+    .nav-bar {
+        grid-template-columns: 1fr;
+    }
+
+    .forge-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-frame {
+        min-height: 300px;
+    }
 }
