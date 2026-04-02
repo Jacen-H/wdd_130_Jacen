@@ -8,15 +8,15 @@ const sumTotal = document.getElementById("sumTotal");
 const MAX_SLOTS = 15;
 const dice = [];
 const DIE_IMAGE_BY_SIDES = {
-  4: "Images/Dice Images/D4.jpg",
-  6: "Images/Dice Images/D6.jpg",
-  8: "Images/Dice Images/D8",
-  10: "Images/Dice Images/D10.jpg",
-  12: "Images/Dice Images/D12.jpg",
-  20: "Images/Dice Images/D20.jpg",
-  100: "Images/Dice Images/D100.jpg"
+  4: "images/Dice Images/D4.jpg",
+  6: "images/Dice Images/D6.jpg",
+  8: "images/Dice Images/D8",
+  10: "images/Dice Images/D10.jpg",
+  12: "images/Dice Images/D12.jpg",
+  20: "images/Dice Images/D20.jpg",
+  100: "images/Dice Images/D100.jpg"
 };
-const DEFAULT_DIE_IMAGE = "Images/Dice Images/D6.jpg";
+const DEFAULT_DIE_IMAGE = "images/Dice Images/D6.jpg";
 
 function getDieImagePath(dieSides) {
   return DIE_IMAGE_BY_SIDES[dieSides] ?? DEFAULT_DIE_IMAGE;
